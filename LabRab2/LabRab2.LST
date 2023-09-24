@@ -1,0 +1,41 @@
+  ADDR B1 B2 B3 B4 C:\Documents and Settings\Administrator\My       PAGE       1
+
+                    org $8000
+  8000 86 00        ldaa #$0
+  8002 97 01        staa $1
+  8004 97 03        staa $3
+  8006 CE 11 11     ldx #$1111
+  8009 18 CE 22 22  ldy #$2222
+  800D 86 33        ldaa #$33
+  800F C6 44        ldab #$44
+  8011 97 02        staa $2
+  8013 D7 04        stab $4
+  8015 CC 00 00     ldd #$0
+  8018 D3 01        addd $1
+  801A D3 03        addd $3
+  801C 37           pshb
+  801D 36           psha
+  801E DF 02        stx $2
+  8020 32           pula
+  8021 33           pulb
+  8022 D3 01        addd $1
+  8024 37           pshb
+  8025 36           psha
+  8026 DF 02        stx $2
+  8028 86 00        ldaa #$0
+  802A 97 02        staa $2
+  802C 32           pula
+  802D 33           pulb
+  802E D3 02        addd $2
+  8030 37           pshb
+  8031 36           psha
+  8032 18 DF 02     sty $2
+  8035 D3 01        addd $1
+  8037 37           pshb
+  8038 36           psha
+  8039 86 00        ldaa #$0
+  803B 18 DF 01     sty $1
+  803E 97 02        staa $2
+  8040 32           pula
+  8041 33           pulb
+  8042 D3 02        addd $2

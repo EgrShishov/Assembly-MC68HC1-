@@ -1,0 +1,63 @@
+  ADDR B1 B2 B3 B4 thrass11.tmp                                     PAGE       1
+
+                    org $8000
+  8000 CE 00 00     ldx #$0000
+  8003 86 00        ldaa #0
+  8005 C6 FF        ldab #$ff ;while condition
+
+                   filling_ff:
+  8007 E7 00        stab 0,x ;filling 256-bits array with ff
+  8009 4C           inca
+  800A 08           inx
+  800B 11           cba
+  800C 27 02        beq start_filling
+                    ;beq done
+  800E 20 F7        bra filling_ff
+
+                   start_filling:
+  8010 86 00        ldaa #0
+  8012 C6 FF        ldab #$ff
+  8014 CE 00 00     ldx #$0000
+  8017 20 00        bra filling
+
+                   filling:
+  8019 A7 00        staa 0,x ;filling 256-bits array
+  801B 4C           inca
+  801C 08           inx
+  801D 11           cba
+                    ;beq reverse
+  801E 20 F9        bra filling
+
+                   reverse:
+  8020 CE 00 00     ldx #$0000
+  8023 18 CE 00 FF  ldy #$00ff
+  8027 20 00        bra reverseloop
+
+                   reverseloop:
+  8029 A6 00        ldaa 0,x
+  802B 18 E6 00     ldab 0,y
+  802E 36           psha
+  802F 37           pshb
+  8030 32           pula
+  8031 33           pulb
+  8032 A7 00        staa 0,x
+  8034 18 E7 00     stab 0,y
+  8037 08           inx
+  8038 18 FF 01 01  sty $0101
+  803C BC 01 01     cpx $0101
+  803F 27 04        beq done
+  8041 18 09        dey
+  8043 26 E4        bne reverseloop
+
+                   done:
+  8045 CF           stop
+  8046 01           nop
+
+  Symbol Table 
+
+  DONE               8045
+  FILLING_FF         8007
+  REVERSELOOP        8029
+  START_FILLING      8010
+  FILLING            8019
+  REVERSE            8020

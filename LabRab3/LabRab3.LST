@@ -1,0 +1,158 @@
+  ADDR B1 B2 B3 B4 thrass11.tmp                                     PAGE       1
+
+                    org $8000
+  8000 CC 00 00     ldd #0
+  8003 DD 03        std $3
+  8005 86 00        ldaa #%00000000
+  8007 97 01        staa $1
+  8009 C6 33        ldab #%00110011
+  800B D7 02        stab $2
+  800D C6 00        ldab #0
+
+  800F 86 01        ldaa #1
+  8011 94 01        anda $1
+  8013 97 04        staa $4
+  8015 D3 03        addd $3
+  8017 74 00 01     lsr $1
+  801A 05           lsld
+  801B 05           lsld
+
+  801C 86 01        ldaa #1
+  801E 94 01        anda $1
+  8020 97 04        staa $4
+  8022 D3 03        addd $3
+  8024 74 00 01     lsr $1
+  8027 05           lsld
+  8028 05           lsld
+
+  8029 86 01        ldaa #1
+  802B 94 01        anda $1
+  802D 97 04        staa $4
+  802F D3 03        addd $3
+  8031 74 00 01     lsr $1
+  8034 05           lsld
+  8035 05           lsld
+
+  8036 86 01        ldaa #1
+  8038 94 01        anda $1
+  803A 97 04        staa $4
+  803C D3 03        addd $3
+  803E 74 00 01     lsr $1
+  8041 05           lsld
+
+  8042 D7 05        stab $5
+
+  8044 CC 00 00     ldd #0
+
+  8047 86 01        ldaa #1
+  8049 94 01        anda $1
+  804B 97 04        staa $4
+  804D D3 03        addd $3
+  804F 74 00 01     lsr $1
+  8052 05           lsld
+  8053 05           lsld
+
+  8054 86 01        ldaa #1
+  8056 94 01        anda $1
+  8058 97 04        staa $4
+  805A D3 03        addd $3
+  805C 74 00 01     lsr $1
+  805F 05           lsld
+  8060 05           lsld
+
+  8061 86 01        ldaa #1
+  8063 94 01        anda $1
+  8065 97 04        staa $4
+  8067 D3 03        addd $3
+  8069 74 00 01     lsr $1
+  ADDR B1 B2 B3 B4 thrass11.tmp                                     PAGE       2
+
+  806C 05           lsld
+  806D 05           lsld
+
+  806E 86 01        ldaa #1
+  8070 94 01        anda $1
+  8072 97 04        staa $4
+  8074 D3 03        addd $3
+  8076 74 00 01     lsr $1
+  8079 05           lsld
+
+  807A D7 06        stab $6
+  807C DC 05        ldd $5
+  807E DD 10        std $10
+  8080 CC 00 00     ldd #0
+  8083 DD 03        std $3
+
+  8085 86 01        ldaa #1
+  8087 94 02        anda $2
+  8089 97 04        staa $4
+  808B D3 03        addd $3
+  808D 74 00 02     lsr $2
+  8090 05           lsld
+  8091 05           lsld
+
+  8092 86 01        ldaa #1
+  8094 94 02        anda $2
+  8096 97 04        staa $4
+  8098 D3 03        addd $3
+  809A 74 00 02     lsr $2
+  809D 05           lsld
+  809E 05           lsld
+
+  809F 86 01        ldaa #1
+  80A1 94 02        anda $2
+  80A3 97 04        staa $4
+  80A5 D3 03        addd $3
+  80A7 74 00 02     lsr $2
+  80AA 05           lsld
+  80AB 05           lsld
+
+  80AC 86 01        ldaa #1
+  80AE 94 02        anda $2
+  80B0 97 04        staa $4
+  80B2 D3 03        addd $3
+  80B4 74 00 02     lsr $2
+
+  80B7 D7 05        stab $5
+
+  80B9 CC 00 00     ldd #0
+
+  80BC 86 01        ldaa #1
+  80BE 94 02        anda $2
+  80C0 97 04        staa $4
+  80C2 D3 03        addd $3
+  80C4 74 00 02     lsr $2
+  80C7 05           lsld
+  80C8 05           lsld
+
+  80C9 86 01        ldaa #1
+  80CB 94 02        anda $2
+  80CD 97 04        staa $4
+  80CF D3 03        addd $3
+  80D1 74 00 02     lsr $2
+  80D4 05           lsld
+  80D5 05           lsld
+  ADDR B1 B2 B3 B4 thrass11.tmp                                     PAGE       3
+
+
+  80D6 86 01        ldaa #1
+  80D8 94 02        anda $2
+  80DA 97 04        staa $4
+  80DC D3 03        addd $3
+  80DE 74 00 02     lsr $2
+  80E1 05           lsld
+  80E2 05           lsld
+
+  80E3 86 01        ldaa #1
+  80E5 94 02        anda $2
+  80E7 97 04        staa $4
+  80E9 D3 03        addd $3
+  80EB 74 00 02     lsr $2
+
+  80EE D7 06        stab $6
+  80F0 DC 05        ldd $5
+
+  80F2 D3 10        addd $10
+                    ;std $12
+                    ;ldx $10
+                    ;ldy $12
